@@ -243,6 +243,41 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             } while (flag == false);
             return i;
         }
+
+        public int RainTrap(int[] arr)
+        {
+            int length = arr.Length;
+            int sum =0;
+            int leftPose = 1;
+            int rightPose = length-2;
+            int leftMax = arr[0];
+            int rightMax = arr[length-1];
+
+            while (leftPose <= rightPose)
+            {
+                if (arr[leftPose] >= leftMax)
+                {
+                    leftMax = arr[leftPose];
+                    leftPose++;
+                }
+                else if (arr[rightPose] >= rightMax)
+                {
+                    rightMax = arr[rightPose];
+                    rightPose--;
+                }
+                else if (leftMax <= rightMax && arr[leftPose] < leftMax)
+                {
+                    sum += leftMax - arr[leftPose];
+                    leftPose++;
+                }
+                else
+                {
+                    sum += rightMax - arr[rightPose];
+                    rightPose--;
+                }
+            }
+            return sum;
+        }
        
 
 
