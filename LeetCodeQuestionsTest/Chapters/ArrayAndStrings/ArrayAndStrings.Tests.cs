@@ -178,6 +178,18 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
             Assert.AreEqual(3,output);
         }
 
+        [TestMethod]
+
+        public void RainTrapTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+
+            int[] trap = { 4, 2, 0, 3, 2,5};
+            int output = testObject.RainTrap(trap);
+
+            Assert.AreEqual(9,output);
+        }
+
 
 
 
