@@ -190,7 +190,27 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
             Assert.AreEqual(9,output);
         }
 
+        [TestMethod]
+        public void RomanNumberTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+            string? input = "LVIII";
+            int output = testObject.RomanNumber(input);
 
+            Assert.AreEqual(58,output);
+        }
+
+        [TestMethod]
+        public void RomanNumberTest2()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+            string? input = "MCMXCIV";
+            int output = testObject.RomanNumber(input);
+
+            Assert.AreEqual(1994, output);
+        }
+
+        
 
 
 
