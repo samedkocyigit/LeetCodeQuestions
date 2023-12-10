@@ -278,6 +278,37 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             }
             return sum;
         }
+
+        public int RomanNumber(string input)
+        {
+            int temp = 0;
+            int result=0;
+            Dictionary<char, int> romanEmpire = new Dictionary<char, int>()
+            {
+                {'M',1000 },
+                {'D',500 },
+                {'C',100 },
+                {'L',50 },
+                {'X',10 },
+                {'V',5 },
+                {'I',1 }
+            };
+
+            for(int i = input.Length - 1; i >= 0; i--)
+            {
+                if (romanEmpire[input[i]]>=temp)
+                {
+                    result += romanEmpire[input[i]];
+                }
+                else
+                {
+                    result -= romanEmpire[input[i]];
+                }
+                temp = romanEmpire[input[i]];
+            }
+            
+            return result;
+        }
        
 
 
