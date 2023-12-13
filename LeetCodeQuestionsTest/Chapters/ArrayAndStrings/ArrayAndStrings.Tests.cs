@@ -191,26 +191,38 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
         }
 
         [TestMethod]
-        public void RomanNumberTest()
+        public void RomanToIntegerTest()
         {
             ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
             string? input = "LVIII";
-            int output = testObject.RomanNumber(input);
+            int output = testObject.RomanToInteger(input);
 
             Assert.AreEqual(58,output);
         }
 
         [TestMethod]
-        public void RomanNumberTest2()
+        public void RomanToIntegerTest2()
         {
             ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
             string? input = "MCMXCIV";
-            int output = testObject.RomanNumber(input);
+            int output = testObject.RomanToInteger(input);
 
             Assert.AreEqual(1994, output);
         }
 
-        
+        [TestMethod]
+
+        public void IntegerToRomanTest()
+        {
+            ArrayAndStringsSolutions testobject = new ArrayAndStringsSolutions();
+
+            int number = 1994;
+            string output = testobject.IntegerToRoman(number);
+
+            Assert.AreEqual("MCMXCIV", output);
+        }
+
+
 
 
 
