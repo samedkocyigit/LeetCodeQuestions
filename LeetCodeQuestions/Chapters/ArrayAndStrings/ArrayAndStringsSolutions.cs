@@ -279,7 +279,7 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return sum;
         }
 
-        public int RomanNumber(string input)
+        public int RomanToInteger(string input)
         {
             int temp = 0;
             int result=0;
@@ -309,7 +309,26 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             
             return result;
         }
-       
+
+        public string IntegerToRoman(int num)
+        {
+            if (num >= 1000) return "M" + IntegerToRoman(num - 1000);
+
+            if (num >= 500) return num >= 900 ? ("CM" + IntegerToRoman(num - 900)) : ("D" + IntegerToRoman(num - 500));
+
+            if (num >= 100) return num >= 400 ? ("CD" + IntegerToRoman(num - 400)) : ("C" + IntegerToRoman(num - 100));
+
+            if (num >= 50) return num >= 90 ? ("XC" + IntegerToRoman(num - 90)) : ("L" + IntegerToRoman(num - 50));
+
+            if (num >= 10) return num >= 40 ? ("XL" + IntegerToRoman(num - 40)) : ("X" + IntegerToRoman(num - 10));
+
+            if (num >= 5) return num == 9 ? "IX" : "V" + IntegerToRoman(num - 5);
+
+            if (num > 0) return num == 4 ? "IV" : "I" + IntegerToRoman(num - 1);
+
+            return "";
+        }
+
 
 
 
