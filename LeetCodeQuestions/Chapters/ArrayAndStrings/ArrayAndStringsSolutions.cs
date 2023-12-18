@@ -13,7 +13,7 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
     {
         public int[] MergeSortedArr(int[] nums1, int m, int[] nums2, int n)
         {
-            for (int j = 0, i=m; j < n; j++,i++)
+            for (int j = 0, i = m; j < n; j++, i++)
             {
                 nums1[i] = nums2[j];
             }
@@ -46,10 +46,10 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return tempArr;
         }
         public ArrayList UniqueArray(int[] arr)
-        {                                         
+        {
             ArrayList tempArr = new ArrayList();
 
-            for(int i=0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (!tempArr.Contains(arr[i]))
                 {
@@ -86,9 +86,9 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
         {
             int counter = 0;
             Dictionary<int, int> h1 = new Dictionary<int, int>();
-            for (int i = 0; i<arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for(int j = 0; j < arr.Length; j++)
+                for (int j = 0; j < arr.Length; j++)
                 {
                     if (arr[i] == arr[j] && !h1.ContainsKey(arr[i]))
                     {
@@ -96,7 +96,7 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
                     }
                 }
                 if (!h1.ContainsKey(arr[i]))
-                    { h1.Add(arr[i], counter); }
+                { h1.Add(arr[i], counter); }
                 counter = 0;
             }
 
@@ -104,15 +104,15 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return output;
         }
 
-        public int[] RotateArray(int[] arr,int k)
+        public int[] RotateArray(int[] arr, int k)
         {
             int lastElement;
-            for (int i =0; i < k; i++)
+            for (int i = 0; i < k; i++)
             {
-                lastElement= arr[arr.Length-1];
-                for (int j=arr.Length-1; j >0;j--)
+                lastElement = arr[arr.Length - 1];
+                for (int j = arr.Length - 1; j > 0; j--)
                 {
-                    arr[j]= arr[j-1];    
+                    arr[j] = arr[j - 1];
                 }
                 arr[0] = lastElement;
             }
@@ -130,15 +130,15 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             {
                 for (int j = arr.Length - 1; j > 0; j--)
                 {
-                    if(j>i)
+                    if (j > i)
                         tempArr.Add(arr[j] - arr[i]);
                 }
             }
             tempArr.Sort();
             tempArr.Reverse();
             profits = (int)tempArr[0];
-            if(profits<0)
-                profits= 0;
+            if (profits < 0)
+                profits = 0;
 
             return profits;
         }
@@ -148,10 +148,10 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             int profit = 0;
             int buyDay = 0, sellDay = 0;
 
-            if(arr.Length==1)
+            if (arr.Length == 1)
                 return 0;
 
-            for (int i = 1; i < arr.Length-1; i++)
+            for (int i = 1; i < arr.Length - 1; i++)
             {
                 if (arr[i] > arr[i - 1])
                     buyDay++;
@@ -168,47 +168,47 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
         public bool JumpGame(int[] arr)
         {
             int index;
-            int length=arr.Length; 
+            int length = arr.Length;
 
-            for (int j=1; j<length;)
+            for (int j = 1; j < length;)
             {
                 index = arr[j];
                 if (index == 0 || (j + index) > (length - 1)) { return false; }
-                                
-                j=j+index;
-                
-                if(j==length-1) { return true; }
+
+                j = j + index;
+
+                if (j == length - 1) { return true; }
             }
- 
+
             return false;
         }
 
         public int JumpGame2(int[] arr)
         {
             int index;
-            int length=arr.Length;
+            int length = arr.Length;
             int counter = 1;
 
-            for(int j=1; j < length;)
+            for (int j = 1; j < length;)
             {
                 index = arr[j];
 
-                if(index == 0 || (j+index) > (length - 1)) { return 0; }
+                if (index == 0 || (j + index) > (length - 1)) { return 0; }
 
-                j=j+index;
+                j = j + index;
                 counter++;
-                if(j==length-1) { return counter; }
+                if (j == length - 1) { return counter; }
             }
             return 0;
         }
 
-        public int[] arrMultiplication(int[] arr) 
-        {  
-            int[] outputArr= new int[arr.Length];
-            int temp = 1;   
-            for(int i = 0; i < arr.Length; i++)
+        public int[] arrMultiplication(int[] arr)
+        {
+            int[] outputArr = new int[arr.Length];
+            int temp = 1;
+            for (int i = 0; i < arr.Length; i++)
             {
-                for(int j =0; j<arr.Length; j++)
+                for (int j = 0; j < arr.Length; j++)
                 {
                     if (i == j) continue;
                     temp *= arr[j];
@@ -216,7 +216,7 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
                 outputArr[i] = temp;
                 temp = 1;
             }
-            
+
             return outputArr;
         }
 
@@ -224,18 +224,18 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
         {
             int gas = 0;
             int length = arrStation.Length;
-            int i = 0,j=-1,index=0;
+            int i = 0, j = -1, index = 0;
             bool flag = false;
             do
             {
-                if(arrStation.Sum()< arrCost.Sum()) { return -1; }
+                if (arrStation.Sum() < arrCost.Sum()) { return -1; }
                 if (arrStation[i] >= arrCost[i] || gas >= arrCost[i])
                 {
                     if (gas == 0) { gas += arrStation[i]; }
                     else { gas += arrStation[i] - arrCost[j]; }
 
                     index++;
-                    if (index == arrCost.Length) { flag = true;}
+                    if (index == arrCost.Length) { flag = true; }
                 }
 
                 j++; if (j >= length) { j = 0; }
@@ -247,11 +247,11 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
         public int RainTrap(int[] arr)
         {
             int length = arr.Length;
-            int sum =0;
+            int sum = 0;
             int leftPose = 1;
-            int rightPose = length-2;
+            int rightPose = length - 2;
             int leftMax = arr[0];
-            int rightMax = arr[length-1];
+            int rightMax = arr[length - 1];
 
             while (leftPose <= rightPose)
             {
@@ -282,7 +282,7 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
         public int RomanToInteger(string input)
         {
             int temp = 0;
-            int result=0;
+            int result = 0;
             Dictionary<char, int> romanEmpire = new Dictionary<char, int>()
             {
                 {'M',1000 },
@@ -294,9 +294,9 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
                 {'I',1 }
             };
 
-            for(int i = input.Length - 1; i >= 0; i--)
+            for (int i = input.Length - 1; i >= 0; i--)
             {
-                if (romanEmpire[input[i]]>=temp)
+                if (romanEmpire[input[i]] >= temp)
                 {
                     result += romanEmpire[input[i]];
                 }
@@ -306,7 +306,7 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
                 }
                 temp = romanEmpire[input[i]];
             }
-            
+
             return result;
         }
 
@@ -331,17 +331,39 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
 
         public int LengthLastWord(string input)
         {
-            int length = input.Length-1;
-            int counter= 0;
+            int length = input.Length - 1;
+            int counter = 0;
 
             for (int i = length; i >= 0; i--)
             {
-                if (input[i] != ' ') 
+                if (input[i] != ' ')
                     counter++;
                 else
                     break;
             }
             return counter;
+        }
+
+        public string LongestCommonPrefix(string[] strs)
+        {
+            if (strs == null || strs.Length == 0)  // If the input array is null or empty, return an empty string
+                return "";
+
+            string prefix = strs[0];  // Initialize prefix with the first string in the array
+
+            for (int i = 1; i < strs.Length; i++)
+            {
+                // Keep reducing the prefix until it is a prefix of the current string
+                while (!strs[i].StartsWith(prefix))
+                {
+                    prefix = prefix.Substring(0, prefix.Length - 1);
+
+                    if (string.IsNullOrEmpty(prefix))
+                        return "";  // If the prefix becomes empty, return an empty string
+                }
+            }
+
+            return prefix;
         }
 
 
