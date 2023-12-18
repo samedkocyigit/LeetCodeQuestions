@@ -227,10 +227,21 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
         {
             ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
 
-            string sentence = "Messi";
+            string sentence = "Messi sadsa sadsad sdasdsad messi";
             int lenght = testObject.LengthLastWord(sentence);
 
             Assert.AreEqual(5,lenght);
+        }
+
+        [TestMethod]
+        public void LongestCommonPrefixTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+
+            string[] arr = { "flllower", "flllight", "fllow" };
+            string common = testObject.LongestCommonPrefix(arr);
+
+            Assert.AreEqual("fll", common);
         }
 
 
