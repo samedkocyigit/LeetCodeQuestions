@@ -329,6 +329,21 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return "";
         }
 
+        public int LengthLastWord(string input)
+        {
+            int length = input.Length-1;
+            int counter= 0;
+
+            for (int i = length; i >= 0; i--)
+            {
+                if (input[i] != ' ') 
+                    counter++;
+                else
+                    break;
+            }
+            return counter;
+        }
+
 
 
 

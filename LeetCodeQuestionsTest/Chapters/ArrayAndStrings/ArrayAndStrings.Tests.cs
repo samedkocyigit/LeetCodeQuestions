@@ -222,6 +222,17 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
             Assert.AreEqual("MCMXCIV", output);
         }
 
+        [TestMethod]
+        public void LengthLastWordTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+
+            string sentence = "Messi";
+            int lenght = testObject.LengthLastWord(sentence);
+
+            Assert.AreEqual(5,lenght);
+        }
+
 
 
 
