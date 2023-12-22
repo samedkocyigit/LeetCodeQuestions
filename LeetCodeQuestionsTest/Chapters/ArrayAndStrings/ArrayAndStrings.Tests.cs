@@ -244,6 +244,16 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
             Assert.AreEqual("fll", common);
         }
 
+        [TestMethod]
+        public void ReverseWordsInStringTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+            string sentence = "messi  is the Goat";
+            string output = testObject.ReverseWordsInString(sentence);
+
+            Assert.AreEqual("taoG eht si issem", output);
+        }
+
 
 
 
