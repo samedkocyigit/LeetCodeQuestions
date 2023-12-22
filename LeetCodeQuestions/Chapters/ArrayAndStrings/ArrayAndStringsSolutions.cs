@@ -366,6 +366,24 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return prefix;
         }
 
+        public string ReverseWordsInString(string input)
+        {
+            for (int i = 0; i < input.Length-1; i++)
+            {
+                if (input[i]==' ' && input[i+1]==' ')
+                {
+                    input = input.Remove(i + 1, 1);
+                }
+            }
+            char[] template = new char[input.Length];
+            for (int i=input.Length - 1, j=0; i >= 0;i--,j++)
+            {
+                template[j] = input[i];
+            }
+            string output = new string(template);
+            return output;
+        }
+
 
 
 
