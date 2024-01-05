@@ -384,6 +384,32 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return output;
         }
 
+        public string ZigzagConversion(string input,int num)
+        {
+            if (num == 1)
+                return input;
+
+            var result = new StringBuilder();
+            var perIter = num * 2 - 2;
+            for (int row = 0; row < num; row++)
+            {
+                int i = 0;
+                while ((i + row) < input.Length)
+                {
+                    result.Append(input[i + row]);
+                    if (row != 0 && row != num - 1)
+                    {
+                        if ((i + perIter - row) < input.Length)
+                        {
+                            result.Append(input[i + perIter - row]);
+                        }
+                    }
+
+                    i += perIter;
+                }
+            }
+            return result.ToString();
+        }
 
 
 
