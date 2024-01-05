@@ -254,6 +254,17 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
             Assert.AreEqual("taoG eht si issem", output);
         }
 
+        [TestMethod]
+
+        public void ZigzagConversionTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+            string input = "MESSIISTHEGOAT";
+            int numRows = 4;
+            string output = testObject.ZigzagConversion(input,numRows);
+
+            Assert.AreEqual("MSAEITOTSIHGSE", output);
+        }    
 
 
 
