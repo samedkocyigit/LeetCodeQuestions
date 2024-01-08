@@ -264,7 +264,23 @@ namespace LeetCodeQuestionTest.Chapters.ArrayAndStringsTest
             string output = testObject.ZigzagConversion(input,numRows);
 
             Assert.AreEqual("MSAEITOTSIHGSE", output);
-        }    
+        }
+
+        [TestMethod]
+
+        public void TextJustificationTest()
+        {
+            ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+            string[] input = { "Hello", "world", "this", "is", "the", "text", "justification", "test", "scenario" };
+            int maxWidth = 16;
+
+            var result = testObject.TextJustification(input, maxWidth);
+
+            Assert.AreEqual("Hello world this", result[0]);
+            Assert.AreEqual("is    the   text", result[1]);
+            Assert.AreEqual("justification   ", result[2]);
+            Assert.AreEqual("test scenario   ", result[3]);
+        }
 
 
 

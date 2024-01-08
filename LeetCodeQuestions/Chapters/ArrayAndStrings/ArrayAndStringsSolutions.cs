@@ -411,31 +411,34 @@ namespace LeetCodeQuestions.Chapters.ArrayAndStrings
             return result.ToString();
         }
 
+        public IList<string> TextJustification(string[] words, int maxWidth)
+        {
+            //{ "Hello", "world", "this", "is", "the", "text", "justification", "test", "scenario" };
+            var result = new List<string>();
+            var current = new List<string>();
+            int num_of_letters = 0;
 
+            foreach (var word in words)
+            {
+                if (word.Length + current.Count + num_of_letters > maxWidth)
+                {
+                    for (int i = 0; i < maxWidth - num_of_letters; i++)
+                    {
+                        current[i % (current.Count - 1 > 0 ? current.Count - 1 : 1)] += " ";
+                    }
+                    result.Add(string.Join("", current));
+                    current.Clear();
+                    num_of_letters = 0;
+                }
+                current.Add(word);
+                num_of_letters += word.Length;
+            }
 
+            string lastLine = string.Join(" ", current);
+            while (lastLine.Length < maxWidth) lastLine += " ";
+            result.Add(lastLine);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            return result;
+        }
     }
 }
