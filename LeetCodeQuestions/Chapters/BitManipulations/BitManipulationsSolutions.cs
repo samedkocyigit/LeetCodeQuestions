@@ -33,5 +33,21 @@ namespace LeetCodeQuestions.Chapters.BitManipulations
 
             return res;
         }
+
+        public double ReverseBits(string input)
+        {
+            int length= input.Length-1;
+            char[] charArray = input.ToCharArray();
+            Array.Reverse(charArray);
+            string reversedString = new string(charArray);
+            double temp = 0;
+
+            for(int i = 0; i < input.Length; i++)
+            {
+                temp += (int)(int.Parse(reversedString[i].ToString()) * Math.Pow(2, length));
+                length--;
+            }
+            return temp;
+        }
     }
 }

@@ -21,5 +21,15 @@ namespace LeetCodeQuestionsTests.Chapters.BitManupulations
             Assert.AreEqual(100, result);
 
         }
+
+        [TestMethod]
+        public void ReverseBitsTest() 
+        {
+            BitManipulationsSolutions testObject = new BitManipulationsSolutions();
+            string input = "00000010100101000001111010011100";
+            double output = testObject.ReverseBits(input);
+
+            Assert.AreEqual(964176192, output);
+        }
     }
 }
