@@ -34,5 +34,17 @@ namespace LeetCodeQuestionsTests.Chapters.TwoPointers
             Assert.AreEqual(true,outputTwo);   
         }
 
+        [TestMethod]
+        public void TwoSumTest() 
+        {
+            TwoPointersSolutions testObject = new TwoPointersSolutions();
+            int[] arr = { 22,2, 7, 9 };
+            int target = 9;
+            int[] outputArr= testObject.TwoSum(arr,target);
+
+            Assert.AreEqual(2, outputArr[0]);
+            Assert.AreEqual(7, outputArr[1]);
+        }
+
     }
 }
