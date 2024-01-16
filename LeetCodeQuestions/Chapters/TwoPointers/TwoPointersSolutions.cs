@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
@@ -56,6 +57,29 @@ namespace LeetCodeQuestions.Chapters.TwoPointers
                 else { return false; }
             }
             return true;
+        }
+
+        public int[] TwoSum(int[] arr,int target)
+        {
+            int length = arr.Length;
+            int[] result = new int[2];
+            int temp = 0;
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = length-1; j > i; j--)
+                {
+                    temp = arr[i] + arr[j];
+                    if (temp == 9)
+                    {
+                        result[0] = arr[i];
+                        result[1] = arr[j];
+                        return result;
+                    }
+                    temp = 0;
+                }
+            }
+            return result;
         }
     }
 }
