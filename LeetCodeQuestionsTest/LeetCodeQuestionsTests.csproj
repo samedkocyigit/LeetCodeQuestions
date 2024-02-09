@@ -21,4 +21,44 @@
     <ProjectReference Include="..\LeetCodeQuestions\LeetCodeQuestions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Chapters\SlidingWindows\" />
+    <None Remove="Chapters\Matrix\" />
+    <None Remove="Chapters\Backtracking\" />
+    <None Remove="Chapters\BinarySearch\" />
+    <None Remove="Chapters\BinarySearchTree\" />
+    <None Remove="Chapters\BinaryTreeGeneral\" />
+    <None Remove="Chapters\DivideAndConquer\" />
+    <None Remove="Chapters\GraphBfs\" />
+    <None Remove="Chapters\GraphGeneral\" />
+    <None Remove="Chapters\Hashmaps\" />
+    <None Remove="Chapters\Heap\" />
+    <None Remove="Chapters\Intervals\" />
+    <None Remove="Chapters\KadanesAlgorithm\" />
+    <None Remove="Chapters\LinkedLists\" />
+    <None Remove="Chapters\Math\" />
+    <None Remove="Chapters\MultiDimensionalDP\" />
+    <None Remove="Chapters\OneDimensionalDP\" />
+    <None Remove="Chapters\Stack\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chapters\SlidingWindows\" />
+    <Folder Include="Chapters\Matrix\" />
+    <Folder Include="Chapters\Backtracking\" />
+    <Folder Include="Chapters\BinarySearch\" />
+    <Folder Include="Chapters\BinarySearchTree\" />
+    <Folder Include="Chapters\BinaryTreeGeneral\" />
+    <Folder Include="Chapters\DivideAndConquer\" />
+    <Folder Include="Chapters\GraphBfs\" />
+    <Folder Include="Chapters\GraphGeneral\" />
+    <Folder Include="Chapters\Hashmaps\" />
+    <Folder Include="Chapters\Heap\" />
+    <Folder Include="Chapters\Intervals\" />
+    <Folder Include="Chapters\KadanesAlgorithm\" />
+    <Folder Include="Chapters\LinkedLists\" />
+    <Folder Include="Chapters\Math\" />
+    <Folder Include="Chapters\MultiDimensionalDP\" />
+    <Folder Include="Chapters\OneDimensionalDP\" />
+    <Folder Include="Chapters\Stack\" />
+  </ItemGroup>
 </Project>
