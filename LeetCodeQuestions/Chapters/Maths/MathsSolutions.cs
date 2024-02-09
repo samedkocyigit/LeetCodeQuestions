@@ -37,5 +37,32 @@ public class MathsSolutions
         newArr[0] = 1;
         return newArr;
     }
+
+    public int FactorialTrailingZeroes(int num)
+    {
+        int output=0;
+        int fact = FactorialFunc(num);
+        int x = 10;
+        bool flag = true;
+        while (flag!=false)
+        {
+            if (fact % x == 0)
+            {
+                output++;
+                x *= 10;
+            }
+            else
+                flag = false;
+        }
+
+        return output;
+    }
+    public int FactorialFunc(int a)
+    {
+        if (a == 0)
+            return 1;
+
+        return a * FactorialFunc(a - 1);
+    }
 }
 
