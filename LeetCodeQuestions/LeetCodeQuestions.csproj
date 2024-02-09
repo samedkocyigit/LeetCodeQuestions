@@ -24,9 +24,9 @@
     <Folder Include="Chapters\KadanesAlgorithm\" />
     <Folder Include="Chapters\BinarySearch\" />
     <Folder Include="Chapters\Heap\" />
-    <Folder Include="Chapters\Math\" />
     <Folder Include="Chapters\OneDimensionalDP\" />
     <Folder Include="Chapters\MultiDimensionalDP\" />
+    <Folder Include="Chapters\Maths\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,8 +45,8 @@
     <None Remove="Chapters\KadanesAlgorithm\" />
     <None Remove="Chapters\BinarySearch\" />
     <None Remove="Chapters\Heap\" />
-    <None Remove="Chapters\Math\" />
     <None Remove="Chapters\OneDimensionalDP\" />
     <None Remove="Chapters\MultiDimensionalDP\" />
+    <None Remove="Chapters\Maths\" />
   </ItemGroup>
 </Project>

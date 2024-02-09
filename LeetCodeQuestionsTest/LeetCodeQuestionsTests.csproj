@@ -36,10 +36,10 @@
     <None Remove="Chapters\Intervals\" />
     <None Remove="Chapters\KadanesAlgorithm\" />
     <None Remove="Chapters\LinkedLists\" />
-    <None Remove="Chapters\Math\" />
     <None Remove="Chapters\MultiDimensionalDP\" />
     <None Remove="Chapters\OneDimensionalDP\" />
     <None Remove="Chapters\Stack\" />
+    <None Remove="Chapters\Maths\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chapters\SlidingWindows\" />
@@ -56,9 +56,9 @@
     <Folder Include="Chapters\Intervals\" />
     <Folder Include="Chapters\KadanesAlgorithm\" />
     <Folder Include="Chapters\LinkedLists\" />
-    <Folder Include="Chapters\Math\" />
     <Folder Include="Chapters\MultiDimensionalDP\" />
     <Folder Include="Chapters\OneDimensionalDP\" />
     <Folder Include="Chapters\Stack\" />
+    <Folder Include="Chapters\Maths\" />
   </ItemGroup>
 </Project>
