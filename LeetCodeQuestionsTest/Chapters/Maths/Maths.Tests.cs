@@ -29,5 +29,15 @@ public class MathTests
 		Assert.AreEqual(0, output[4]);
 
 	}
+
+	[TestMethod]
+	public void FactorialTrailingZeroesTest ()
+	{
+		MathsSolutions testObject = new MathsSolutions();
+		int input = 10;
+		int output = testObject.FactorialTrailingZeroes(input);
+
+		Assert.AreEqual(2, output);
+	}
 }
 
