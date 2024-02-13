@@ -39,5 +39,19 @@ public class MathTests
 
 		Assert.AreEqual(2, output);
 	}
+
+	[TestMethod]
+	public void SquareRootTest()
+	{
+		MathsSolutions testObject = new MathsSolutions();
+
+		int input = 8;
+
+		int output = testObject.SquareRoot(input);
+
+		Assert.AreEqual(2,output);
+
+
+	}
 }
 
