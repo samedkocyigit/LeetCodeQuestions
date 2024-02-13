@@ -64,5 +64,21 @@ public class MathsSolutions
 
         return a * FactorialFunc(a - 1);
     }
+
+    public int SquareRoot(int num) 
+    {
+        int first=0, last=num;
+        while (first <= last)
+        {
+            long mid=(first+last)/2,temp=mid*mid;
+
+            if (temp == num) return (int)mid;
+
+            else if(temp>num) last = (int)(mid - 1);
+
+            else first =(int)(mid + 1);
+        }
+        return last;
+    }
 }
 
