@@ -281,6 +281,15 @@ public class ArrayAndStringsTests
         Assert.AreEqual("justification   ", result[2]);
         Assert.AreEqual("test scenario   ", result[3]);
     }
+    [TestMethod]
+    public void RobberTest()
+    {
+        ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+        int[] input = { 1,2,3,4,6,5,5,5,5};
+        var result = testObject.Robber(input);
+
+        Assert.AreEqual(20, result);
+    }
 
 
 
