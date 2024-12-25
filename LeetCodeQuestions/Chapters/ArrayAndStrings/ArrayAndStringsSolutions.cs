@@ -440,4 +440,47 @@ public class ArrayAndStringsSolutions
 
         return result;
     }
+    public int Robber(int[] input)
+    {
+        //2,23,20,3 
+        int sum = 0;
+        int temp = 0;
+        int index = 0;
+        int k = 0;
+        if(input.Length%2 == 1)
+        {
+            foreach(var item in input)
+            {
+                if(k%2 == 0)
+                {
+                    temp+=item;
+                }
+                k++;
+            }
+        }
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (index == i && i>0)
+                continue;
+            if(i ==index+1)
+                continue;
+            if(i == input.Length - 1)
+            {
+                sum += input[i];
+                continue;
+            }
+
+            if(input[i] < input[i + 1])
+            {
+                sum += input[i+1];
+                index=i+1;
+            }
+            else
+            {
+                sum += input[i];
+                index = i;
+            }
+        }
+        return sum>temp ?sum :temp;
+    }
 }
