@@ -290,6 +290,15 @@ public class ArrayAndStringsTests
 
         Assert.AreEqual(20, result);
     }
+    [TestMethod]
+    public void GymCounterTest() 
+    {
+        ArrayAndStringsSolutions testObject = new ArrayAndStringsSolutions();
+        string[] input = { "Salı", "Perşembe", "Pazar", "Pazartesi", "Cumartesi", "Salı", "Pazartesi", "Pazartesi", "Çarşamba", "Salı" };
+        var result = testObject.GymCounter(input);
+
+        Assert.AreEqual(6, result);
+    }
 
 
 

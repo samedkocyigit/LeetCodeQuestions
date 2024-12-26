@@ -368,15 +368,15 @@ public class ArrayAndStringsSolutions
 
     public string ReverseWordsInString(string input)
     {
-        for (int i = 0; i < input.Length-1; i++)
+        for (int i = 0; i < input.Length - 1; i++)
         {
-            if (input[i]==' ' && input[i+1]==' ')
+            if (input[i] == ' ' && input[i + 1] == ' ')
             {
                 input = input.Remove(i + 1, 1);
             }
         }
         char[] template = new char[input.Length];
-        for (int i=input.Length - 1, j=0; i >= 0;i--,j++)
+        for (int i = input.Length - 1, j = 0; i >= 0; i--, j++)
         {
             template[j] = input[i];
         }
@@ -384,7 +384,7 @@ public class ArrayAndStringsSolutions
         return output;
     }
 
-    public string ZigzagConversion(string input,int num)
+    public string ZigzagConversion(string input, int num)
     {
         if (num == 1)
             return input;
@@ -447,33 +447,33 @@ public class ArrayAndStringsSolutions
         int temp = 0;
         int index = 0;
         int k = 0;
-        if(input.Length%2 == 1)
+        if (input.Length % 2 == 1)
         {
-            foreach(var item in input)
+            foreach (var item in input)
             {
-                if(k%2 == 0)
+                if (k % 2 == 0)
                 {
-                    temp+=item;
+                    temp += item;
                 }
                 k++;
             }
         }
         for (int i = 0; i < input.Length; i++)
         {
-            if (index == i && i>0)
+            if (index == i && i > 0)
                 continue;
-            if(i ==index+1)
+            if (i == index + 1)
                 continue;
-            if(i == input.Length - 1)
+            if (i == input.Length - 1)
             {
                 sum += input[i];
                 continue;
             }
 
-            if(input[i] < input[i + 1])
+            if (input[i] < input[i + 1])
             {
-                sum += input[i+1];
-                index=i+1;
+                sum += input[i + 1];
+                index = i + 1;
             }
             else
             {
@@ -481,6 +481,47 @@ public class ArrayAndStringsSolutions
                 index = i;
             }
         }
-        return sum>temp ?sum :temp;
+        return sum > temp ? sum : temp;
+    }
+    public int GymCounter(string[] input)
+    {
+        //"Salı", "Perşembe", "Pazar", "Pazartesi", "Cumartesi", "Salı", "Pazartesi", "Pazartesi", "Çarşamba", "Salı"
+        List<string> days = new List<string>(input);
+        
+        int currentDay=0;
+        int lastDay = 0;
+        int weekCounter = days.Count > 0 ? 1 : 0;
+        foreach (var day in days)
+        {
+            currentDay = DayInteger(day);
+            if (lastDay >= currentDay)
+            {
+                weekCounter++;
+            }
+            lastDay = currentDay;
+        }
+        return weekCounter;
+    }
+    public int DayInteger(string day)
+    {
+        switch (day)
+        {
+            case "Pazartesi":
+                return 1;
+            case "Salı":
+                return 2;
+            case "Çarşamba":
+                return 3;
+            case "Perşembe":
+                return 4;
+            case "Cuma":
+                return 5;
+            case "Cumartesi":
+                return 6;
+            case "Pazar":
+                return 7;
+            default:
+                throw new InvalidOperationException("No day");
+        }
     }
 }
